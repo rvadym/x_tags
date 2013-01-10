@@ -14,15 +14,6 @@ class Lister_Tags extends \CompleteLister {
     function init() {
         parent::init();
 
-		// add add-on locations to pathfinder
-		$l = $this->api->locate('addons',__NAMESPACE__,'location');
-		$addon_location = $this->api->locate('addons',__NAMESPACE__);
-		$this->api->pathfinder->addLocation($addon_location,array(
-			'js'=>'templates/js',
-			'css'=>'templates/css',
-            'template'=>'templates',
-		))->setParent($l);
-
         if ($this->form && $this->form->connected_form){
             $this->con_form_trigger_js = $this->js(true,array($this->form->connected_form->js()->trigger('get_tags')));
         }
@@ -58,6 +49,15 @@ class Lister_Tags extends \CompleteLister {
    		return parent::render();
    	}
     function defaultTemplate() {
+		// add add-on locations to pathfinder
+		$l = $this->api->locate('addons',__NAMESPACE__,'location');
+		$addon_location = $this->api->locate('addons',__NAMESPACE__);
+		$this->api->pathfinder->addLocation($addon_location,array(
+			'js'=>'templates/js',
+			'css'=>'templates/css',
+            'template'=>'templates',
+		))->setParent($l);
+
         return array('view/lister/tags');
     }
 }

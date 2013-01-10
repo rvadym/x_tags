@@ -13,15 +13,6 @@ class Form_Tags extends \Form {
     function init() {
         parent::init();
 
-		// add add-on locations to pathfinder
-		$l = $this->api->locate('addons',__NAMESPACE__,'location');
-		$addon_location = $this->api->locate('addons',__NAMESPACE__);
-		$this->api->pathfinder->addLocation($addon_location,array(
-			'js'=>'templates/js',
-			'css'=>'templates/css',
-			'template'=>'templates',
-		))->setParent($l);
-
         /*
          *
          */
@@ -142,6 +133,18 @@ class Form_Tags extends \Form {
 
    		return parent::render();
    	}
+    function defaultTemplate() {
+		// add add-on locations to pathfinder
+		$l = $this->api->locate('addons',__NAMESPACE__,'location');
+		$addon_location = $this->api->locate('addons',__NAMESPACE__);
+		$this->api->pathfinder->addLocation($addon_location,array(
+			'js'=>'templates/js',
+			'css'=>'templates/css',
+            'template'=>'templates',
+		))->setParent($l);
+
+        return parent::defaultTemplate();
+    }
 }
 
 class Form_Field_createnew extends \autocomplete\Form_Field_basic {
