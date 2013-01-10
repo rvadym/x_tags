@@ -1,0 +1,28 @@
+
+ul.tag-cloud li {
+  float: left;
+  background-color: #e6f1ff;
+  border: 1px #40a6ff solid;
+  color: #0072bb;
+  font-size: 12px;
+  line-height: 18px;
+  list-style-type: none;
+  padding: 0 5px 0 5px;
+  margin: 2px;
+}
+ul.tag-cloud li .delete_tag {
+  float: right;
+  width: 8px;
+  height: 8px;
+  margin: 3px 0 1px 3px;
+  padding: 2px 1px 2px 3px;
+  background-color: #0072bb;
+  color: #e6f1ff;
+  font-size: 9px;
+  line-height: 10px;
+}
+ul.tag-cloud li .delete_tag:hover {
+  background-color: #40a6ff;
+  color: #0072bb;
+  cursor: pointer;
+}
