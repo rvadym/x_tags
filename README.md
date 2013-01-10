@@ -90,3 +90,10 @@ Same for CompleteLister
     $f->setModel('Model_Article',array('title','text','tags'));    
     $f->addSubmit('Update');
     $this->add('x_tags/Form_Tags',array('connected_form'=>$f));
+    
+    
+    
+    
+* * *
+github README.md formating
+http://daringfireball.net/projects/markdown/syntax#html
