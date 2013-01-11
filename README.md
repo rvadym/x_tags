@@ -19,7 +19,7 @@ Just clone to addons dirrectory of your atk4 project
 
 Add form (I suggest to set id of form manually by passing second parameter to add())
 
-    $f=$this->add('Form','bform','form');
+    $f=$this->add('Form','bform');
     
 Set Model for Form which has 'tags' Field (->type('text'))
 
@@ -29,7 +29,7 @@ Add Form_Tags and connect to your Form
 
     $this->add('x_tags/Form_Tags',array('connected_form'=>$f));
     
-Form_Tag will add Lister to your page and it requires <?$tags_lister?> Tag in page template.
+Form_Tag will add Lister to your page which requires <?$tags_lister?> Tag in page template.
 
 ![Screenshot](https://raw.github.com/rvadym/x_tags/master/docs/add.png)
 
@@ -37,7 +37,7 @@ Form_Tag will add Lister to your page and it requires <?$tags_lister?> Tag in pa
 ### Show Tags:
 
 You can use Lister_Tag to show tags with no Form_Tags as well. 
-This is exanple how to use it with Grid
+This is example how to use it with Grid
 
     
     function formatRow(){
