@@ -33,7 +33,7 @@ class Form_Tags extends \Form {
         $this->tags_list = $this->addField('hidden','tags');
 
         $tag_f = $this->addField('x_tags/createnew','add_tag');
-        $tag_f->setModel('Model_Tag_MyAndCommon');
+        $tag_f->setModel('x_tags/Tag_MyAndCommon');
 
         $this->addSubmit('Add Tag');
 
@@ -49,7 +49,7 @@ class Form_Tags extends \Form {
 
         // if form was submitted
         if ($_GET['tags_list']!='') {
-            $t_m = $this->add('Model_Tag');//->debug();
+            $t_m = $this->add('x_tags/Model_Tag');//->debug();
             $tag_arr = explode('-',$_GET['tags_list']);
             $where = array();
             foreach ($tag_arr as $ta) {
@@ -108,7 +108,7 @@ class Form_Tags extends \Form {
         $this->js(null,$this->return_js)->execute();
     }
     private function findOrCreateTag($tag) {
-        $test_m = $this->add('Model_Tag');
+        $test_m = $this->add('x_tags/Model_Tag');
         $test_m->addCondition('value',$tag);
         $test_m->tryLoadAny();
         if (!$test_m->loaded()) {
