@@ -17,7 +17,7 @@ Just clone to addons dirrectory of your atk4 project
 
 ### Add Tags:
 
-Add form (I suggest set id of form manually by passing second parametr to add())
+Add form (I suggest set id of form manually by passing second parameter to add())
 
     $f=$this->add('Form','bform','form');
     
