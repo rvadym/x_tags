@@ -10,7 +10,7 @@ namespace x_tags;
 class Model_Tag extends \Model_Table {
     public $table='tag';
     function init(){
-        parent::init();
+        parent::init();//$this->debug();
         $this->addField('value')->length(20)->mandatory($this->api->tvs->getMandatoryMessage());
         $this->hasOne('User');
 
