@@ -28,19 +28,27 @@ $.x_tags._import=function(name,fn){
 
 $.each({
 
-    removeTagId: function(field_id,id,separator){
-        field = $('#'+field_id);
-        arr = field.val().split(separator);
 
-        for (i=0;i<arr.length; i++) {
-            if (arr[i]==id) {
-                cut = (i==0)? 1 : i;
-                arr.splice(i,cut);
-            }
+    removeTagId: function(field_id,id){
+        field = $('#'+field_id);
+        var obj = $.parseJSON(field.val());
+
+        for(i in obj){
+            if (i == id) delete obj[i];
         }
 
-        j = arr.join(separator);
-        field.val(j);
+        field.val($.univ.toJSON(obj));
+    },
+
+    addTag: function(field_id,tag_obj){
+        field = $('#'+field_id);
+        var obj = $.parseJSON(field.val());
+
+        for(i in tag_obj){
+            obj[i] = tag_obj[i];
+        }
+
+        field.val($.univ.toJSON(obj));
     }
 
 },$.x_tags._import);

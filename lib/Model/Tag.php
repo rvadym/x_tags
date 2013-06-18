@@ -11,7 +11,7 @@ class Model_Tag extends \Model_Table {
     public $table='tag';
     function init(){
         parent::init();//$this->debug();
-        $this->addField('value')->length(20)->mandatory($this->api->tvs->getMandatoryMessage());
+        $this->addField('value')->length(20)->mandatory('required');
         $this->hasOne('User');
 
         $this->addField('name','value');

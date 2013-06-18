@@ -22,7 +22,7 @@ class Lister_Tags extends \CompleteLister {
         parent::formatRow();
 
         if ($this->form) {
-            $form_js = $this->js()->tvs()->removeTagId($this->form->tags_list->name,$this->current_row['id'],'-');
+            $form_js = $this->js()->x_tags()->removeTagId($this->form->tags_list->name,$this->current_row['id']);
         } else {
             $form_js = '';
         }
