@@ -147,7 +147,7 @@ class Form_Tags extends \Form {
     }
 }
 
-class Form_Field_createnew extends \autocomplete\Form_Field_basic {
+class Form_Field_createnew extends \autocomplete\Form_Field_Basic {
 	function init(){
 		parent::init();
         $name = preg_replace('/_id$/','',$this->short_name);
