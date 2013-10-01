@@ -91,7 +91,7 @@ class Form_Tags extends \Form {
          *  All tags in database will be separated by comma,
          *  so we will not let users to use comma in tag name.
          */
-        $this->set('add_tag_hidden',str_replace(',','',$this->get('add_tag_hidden')));
+        $this->set('add_tag_hidden',str_replace(',','',trim($this->get('add_tag_hidden'))));
 
         $this->return_js = array();
         if ($this->get('add_tag')!='') {
